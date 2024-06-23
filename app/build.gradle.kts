@@ -75,4 +75,7 @@ dependencies {
 
     // Logging
     implementation(libs.logging.interceptor)
+
+    // Transformation layout
+    implementation(libs.transformationlayout)
 }
