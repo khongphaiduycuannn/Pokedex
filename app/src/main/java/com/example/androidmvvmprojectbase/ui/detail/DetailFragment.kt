@@ -1,10 +1,10 @@
 package com.example.androidmvvmprojectbase.ui.detail
 
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.androidmvvmprojectbase.R
 import com.example.androidmvvmprojectbase.base.BaseFragment
 import com.example.androidmvvmprojectbase.data.Pokemon
 import com.example.androidmvvmprojectbase.databinding.FragmentDetailBinding
@@ -42,6 +42,22 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
         sharedViewModel.pokemon.observe(viewLifecycleOwner) {
             viewModel.setPokemon(it)
+        }
+
+        sharedViewModel.index.observe(viewLifecycleOwner) {
+            val listSize = sharedViewModel.pokemonList.value!!.size
+            when (it) {
+                0 -> {
+                    binding.btnPrev.visibility = View.GONE
+                }
+                listSize - 1 -> {
+                    binding.btnNext.visibility = View.GONE
+                }
+                else -> {
+                    binding.btnPrev.visibility = View.VISIBLE
+                    binding.btnNext.visibility = View.VISIBLE
+                }
+            }
         }
     }
 
