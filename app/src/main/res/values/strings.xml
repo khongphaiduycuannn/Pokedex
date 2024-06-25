@@ -16,12 +16,12 @@
     <string name="example_weight">6,9 kg</string>
     <string name="example_height">0,7 m</string>
     <string name="example_description">There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</string>
-    <string name="example_hp">45</string>
-    <string name="example_atk">49</string>
-    <string name="example_def">49</string>
-    <string name="example_satk">65</string>
-    <string name="example_sdef">65</string>
-    <string name="example_speed">45</string>
+    <string name="example_hp">0</string>
+    <string name="example_atk">0</string>
+    <string name="example_def">0</string>
+    <string name="example_satk">0</string>
+    <string name="example_sdef">0</string>
+    <string name="example_speed">0</string>
     <string name="example_name">Bulbasaur</string>
     <string name="example_index">#001</string>
 </resources>

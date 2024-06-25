@@ -455,12 +455,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
@@ -470,12 +471,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
@@ -485,12 +487,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
@@ -500,12 +503,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
@@ -515,12 +519,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
@@ -530,12 +535,13 @@
                 android:layout_height="0dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="1"
+                app:progressView_animation="decelerate"
                 app:progressView_autoAnimate="true"
                 app:progressView_colorBackground="@color/grass_25"
                 app:progressView_colorProgress="@color/grass"
+                app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progress="45"
                 app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
         </LinearLayout>
