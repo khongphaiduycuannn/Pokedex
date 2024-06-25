@@ -51,7 +51,7 @@ fun getTypeColor(type: String): Int {
 }
 fun getTypeBackgroundColor(type: String): Int {
     return when (type) {
-        "Bug" -> R.color.bug
+        "Bug" -> R.color.bug_25
         "Dark" -> R.color.dark_25
         "Dragon" -> R.color.dragon_25
         "Electric" -> R.color.electric_25

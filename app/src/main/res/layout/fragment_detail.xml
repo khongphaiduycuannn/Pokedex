@@ -462,7 +462,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
             <com.skydoves.progressview.ProgressView
@@ -478,7 +477,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
             <com.skydoves.progressview.ProgressView
@@ -494,7 +492,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
             <com.skydoves.progressview.ProgressView
@@ -510,7 +507,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
             <com.skydoves.progressview.ProgressView
@@ -526,7 +522,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
 
             <com.skydoves.progressview.ProgressView
@@ -542,7 +537,6 @@
                 app:progressView_duration="500"
                 app:progressView_max="200"
                 app:progressView_min="0"
-                app:progressView_progressFromPrevious="true"
                 app:progressView_radius="10dp" />
         </LinearLayout>
     </LinearLayout>
