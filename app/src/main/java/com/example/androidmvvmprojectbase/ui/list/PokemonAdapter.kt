@@ -5,7 +5,9 @@ import com.example.androidmvvmprojectbase.base.BaseAdapter
 import com.example.androidmvvmprojectbase.data.Pokemon
 import com.example.androidmvvmprojectbase.databinding.ItemPokemonBinding
 
-class PokemonAdapter() : BaseAdapter<Pokemon, ItemPokemonBinding>(ItemPokemonBinding::inflate) {
+class PokemonAdapter(
+    private val onCardClick: (Int, Pokemon) -> Unit = { position, item -> }
+) : BaseAdapter<Pokemon, ItemPokemonBinding>(ItemPokemonBinding::inflate) {
 
     override fun bindData(binding: ItemPokemonBinding, item: Pokemon, position: Int) {
         while (item.id.length < 3) {
@@ -19,6 +21,8 @@ class PokemonAdapter() : BaseAdapter<Pokemon, ItemPokemonBinding>(ItemPokemonBin
     }
 
     override fun onItemClick(binding: ItemPokemonBinding, item: Pokemon, position: Int) {
-
+        binding.cvPokemonCard.setOnClickListener {
+            onCardClick.invoke(position, item)
+        }
     }
 }

@@ -1,11 +1,14 @@
 package com.example.androidmvvmprojectbase.ui.detail
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.androidmvvmprojectbase.R
 import com.example.androidmvvmprojectbase.base.BaseFragment
 import com.example.androidmvvmprojectbase.data.Pokemon
 import com.example.androidmvvmprojectbase.databinding.FragmentDetailBinding
+import com.example.androidmvvmprojectbase.ui.SharedViewModel
 import com.example.androidmvvmprojectbase.utils.getTypeBackgroundColor
 import com.example.androidmvvmprojectbase.utils.getTypeColor
 
@@ -13,10 +16,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     override val viewModel: DetailViewModel
         get() = ViewModelProvider(this)[DetailViewModel::class]
 
+    private val sharedViewModel: SharedViewModel
+        get() = ViewModelProvider(requireActivity())[SharedViewModel::class]
+
     private val typeAdapter = TypeAdapter()
 
     override fun initData() {
-        viewModel.getPokemon()
+
+
     }
 
     override fun bindData() {
@@ -32,10 +39,24 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             setHeaderTextColor(mainType)
             setPokemonData(it)
         }
+
+        sharedViewModel.pokemon.observe(viewLifecycleOwner) {
+            viewModel.setPokemon(it)
+        }
     }
 
     override fun setOnClick() {
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
+        binding.btnNext.setOnClickListener {
+            sharedViewModel.getNextPokemon(1)
+        }
+
+        binding.btnPrev.setOnClickListener {
+            sharedViewModel.getNextPokemon(-1)
+        }
     }
 
     private fun setBackgroundColor(type: String) {
