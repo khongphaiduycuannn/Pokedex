@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clDetailCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grass"
+    tools:context=".ui.detail.DetailFragment">
+
+    <ImageView
+        android:id="@+id/ivBackgroundImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/img_background_pokeball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vBackgroundCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_view_pokemon_card"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBackgroundImage" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:padding="5dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/example_name"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <TextView
+        android:id="@+id/tvIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/example_index"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="-50dp"
+        android:elevation="1dp"
+        android:src="@drawable/bulbasaur"
+        app:layout_constraintBottom_toTopOf="@+id/vBackgroundCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:background="@android:color/transparent"
+        android:padding="3dp"
+        android:src="@drawable/ic_next"
+        app:layout_constraintBottom_toTopOf="@+id/vBackgroundCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <ImageButton
+        android:id="@+id/btnPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@android:color/transparent"
+        android:padding="3dp"
+        android:src="@drawable/ic_prev"
+        app:layout_constraintBottom_toTopOf="@+id/vBackgroundCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rclTypeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAbout"
+        app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        tools:itemCount="2"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_type"
+        tools:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/tvAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        android:elevation="1dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/about"
+        android:textColor="@color/grass"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/lnWeightHeight"
+        app:layout_constraintEnd_toEndOf="@+id/rclTypeList"
+        app:layout_constraintStart_toStartOf="@+id/rclTypeList"
+        app:layout_constraintTop_toBottomOf="@+id/rclTypeList" />
+
+    <LinearLayout
+        android:id="@+id/lnWeightHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="2dp"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAbout">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_weight" />
+
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center"
+                    android:text="@string/example_weight"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/weight"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/light" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/ic_height" />
+
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start|center"
+                    android:text="@string/example_height"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/height"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="2dp"
+        android:elevation="1dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="start|top"
+        android:maxLines="3"
+        android:text="@string/example_description"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/tvBaseStatus"
+        app:layout_constraintTop_toBottomOf="@id/lnWeightHeight" />
+
+    <TextView
+        android:id="@+id/tvBaseStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        android:elevation="1dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/base_status"
+        android:textColor="@color/grass"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/lnBaseStatus"
+        app:layout_constraintEnd_toEndOf="@+id/tvDescription"
+        app:layout_constraintStart_toStartOf="@+id/tvDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+    <LinearLayout
+        android:id="@+id/lnBaseStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="2dp"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/vBackgroundCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBaseStatus">
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvHp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/hp"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAtk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/atk"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/def"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSAtk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/satk"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSDef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/sdef"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="end|center"
+                android:text="@string/speed"
+                android:textColor="@color/grass"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/light" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvHpValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_hp"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvAtkValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_atk"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvDefValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_def"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvSAtkValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_satk"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvSDefValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_sdef"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvSpeedValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end|center"
+                android:text="@string/example_speed"
+                android:textColor="@color/gdark"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvHpValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvAtkValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvDefValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvSAtkValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvSDefValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pvSpeedValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_weight="1"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/grass_25"
+                app:progressView_colorProgress="@color/grass"
+                app:progressView_max="200"
+                app:progressView_min="0"
+                app:progressView_progress="45"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

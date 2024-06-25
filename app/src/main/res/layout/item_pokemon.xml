@@ -49,8 +49,8 @@
             android:id="@+id/ivImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:src="@drawable/bulbasaur"
-            android:layout_margin="26dp"/>
+            android:layout_margin="26dp"
+            tools:src="@drawable/bulbasaur" />
 
         <TextView
             android:id="@+id/tvName"
@@ -59,8 +59,9 @@
             android:layout_gravity="bottom|center"
             android:layout_margin="6dp"
             android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
             android:textColor="@color/gdark"
-            android:textSize="14sp"
+            android:textSize="13sp"
             tools:text="Bulbasaur" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

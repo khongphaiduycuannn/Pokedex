@@ -78,4 +78,7 @@ dependencies {
 
     // Transformation layout
     implementation(libs.transformationlayout)
+
+    // Progress view
+    implementation(libs.progressview)
 }

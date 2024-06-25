@@ -49,6 +49,7 @@ lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 #Room component
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 #Retrofit
+progressview = { module = "com.github.skydoves:progressview", version.ref = "transformationlayout" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 transformationlayout = { module = "com.github.skydoves:transformationlayout", version.ref = "transformationlayout" }

@@ -5,23 +5,58 @@
 
     <!--Pokemon type-->
     <color name="bug">#A7B723</color>
+    <color name="bug_25">#44A7B723</color>
+
     <color name="dark">#75574C</color>
+    <color name="dark_25">#4475574C</color>
+
     <color name="dragon">#7037FF</color>
+    <color name="dragon_25">#447037FF</color>
+
     <color name="electric">#F9CF30</color>
+    <color name="electric_25">#44F9CF30</color>
+
     <color name="fairy">#E69EAC</color>
+    <color name="fairy_25">#44E69EAC</color>
+
     <color name="fighting">#C12239</color>
+    <color name="fighting_25">#44C12239</color>
+
     <color name="fire">#F57D31</color>
+    <color name="fire_25">#44F57D31</color>
+
     <color name="flying">#A891EC</color>
+    <color name="flying_25">#44A891EC</color>
+
     <color name="ghost">#70559B</color>
+    <color name="ghost_25">#4470559B</color>
+
     <color name="normal">#AAA67F</color>
+    <color name="normal_25">#44AAA67F</color>
+
     <color name="grass">#74CB48</color>
+    <color name="grass_25">#4474CB48</color>
+
     <color name="ground">#DEC16B</color>
+    <color name="ground_25">#44DEC16B</color>
+
     <color name="ice">#9AD6DF</color>
+    <color name="ice_25">#449AD6DF</color>
+
     <color name="poison">#A43E9E</color>
+    <color name="poison_25">#44A43E9E</color>
+
     <color name="psychic">#FB5584</color>
+    <color name="psychic_25">#44FB5584</color>
+
     <color name="rock">#B69E31</color>
+    <color name="rock_25">#44B69E31</color>
+
     <color name="steel">#B7B9D0</color>
+    <color name="steel_25">#44B7B9D0</color>
+
     <color name="water">#6493EB</color>
+    <color name="water_25">#446493EB</color>
 
     <!--Grayscale-->
     <color name="gdark">#212121</color>
