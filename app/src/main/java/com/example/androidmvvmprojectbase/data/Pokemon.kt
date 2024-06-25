@@ -10,10 +10,6 @@ data class Pokemon(
     val type: List<String>,
     val height: Double,
     val weight: Double,
-    @SerializedName("next_evolution")
-    val nextEvolution: String?,
-    @SerializedName("prev_evolution")
-    val prevEvolution: String?,
     val status: Status
 )
 
