@@ -1,5 +1,8 @@
 package com.example.androidmvvmprojectbase.ui.detail
 
+import android.os.Build
+import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -11,6 +14,8 @@ import com.example.androidmvvmprojectbase.databinding.FragmentDetailBinding
 import com.example.androidmvvmprojectbase.ui.SharedViewModel
 import com.example.androidmvvmprojectbase.utils.getTypeBackgroundColor
 import com.example.androidmvvmprojectbase.utils.getTypeColor
+import com.skydoves.transformationlayout.TransformationLayout
+import com.skydoves.transformationlayout.onTransformationEndContainer
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
     override val viewModel: DetailViewModel
@@ -21,12 +26,29 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private val typeAdapter = TypeAdapter()
 
-    override fun initData() {
+    private var transformationName: String? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val params: TransformationLayout.Params? =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                arguments?.getParcelable(
+                    "TransformationParams",
+                    TransformationLayout.Params::class.java
+                )
+            } else {
+                arguments?.getParcelable("TransformationParams")
+            }
+        transformationName = arguments?.getString("transformationName")
+        onTransformationEndContainer(params)
+    }
+
+    override fun initData() {
 
     }
 
     override fun bindData() {
+        binding.tlDetailContainer.transitionName = transformationName
         binding.rclTypeList.adapter = typeAdapter
         binding.rclTypeList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -50,9 +72,11 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 0 -> {
                     binding.btnPrev.visibility = View.GONE
                 }
+
                 listSize - 1 -> {
                     binding.btnNext.visibility = View.GONE
                 }
+
                 else -> {
                     binding.btnPrev.visibility = View.VISIBLE
                     binding.btnNext.visibility = View.VISIBLE
@@ -77,7 +101,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private fun setBackgroundColor(type: String) {
         activity?.apply {
-            window.statusBarColor = getColor(getTypeColor(type))
             binding.clDetailCard.setBackgroundColor(getColor(getTypeColor(type)))
         }
     }

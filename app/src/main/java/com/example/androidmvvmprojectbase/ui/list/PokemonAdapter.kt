@@ -4,12 +4,14 @@ import com.bumptech.glide.Glide
 import com.example.androidmvvmprojectbase.base.BaseAdapter
 import com.example.androidmvvmprojectbase.data.Pokemon
 import com.example.androidmvvmprojectbase.databinding.ItemPokemonBinding
+import com.skydoves.transformationlayout.TransformationLayout
 
 class PokemonAdapter(
-    private val onCardClick: (Int, Pokemon) -> Unit = { position, item -> }
+    private val onCardClick: (Int, Pokemon, TransformationLayout) -> Unit = { position, item, view -> }
 ) : BaseAdapter<Pokemon, ItemPokemonBinding>(ItemPokemonBinding::inflate) {
 
     override fun bindData(binding: ItemPokemonBinding, item: Pokemon, position: Int) {
+        binding.transformationLayout.transitionName = "$position"
         while (item.id.length < 3) {
             item.id = "0" + item.id
         }
@@ -22,7 +24,7 @@ class PokemonAdapter(
 
     override fun onItemClick(binding: ItemPokemonBinding, item: Pokemon, position: Int) {
         binding.cvPokemonCard.setOnClickListener {
-            onCardClick.invoke(position, item)
+            onCardClick.invoke(position, item, binding.transformationLayout)
         }
     }
 }
