@@ -23,14 +23,19 @@
     * [TransformationLayout](https://github.com/skydoves/transformationlayout): Tạo hiệu ứng Morph khi chuyển màn.
     * [ProgressView](https://github.com/skydoves/progressview): Custom progress view.
 ## Các chức năng chính
-* Xem danh sách Pokemon.
-* Xem chi tiết Pokemon.
-* Tìm kiếm Pokemon.
-### 1. Xem danh sách
-<img src="/preview/list.gif" width="270"/>
+1. Xem danh sách Pokemon. 
+2. Xem chi tiết Pokemon. 
+3. Tìm kiếm Pokemon.
 
-### 2. Xem chi tiết
-<img src="/preview/detail.gif" width="270"/>
-
-### 3. Tìm kiếm
-<img src="/preview/search.gif" width="270"/>
+<table>
+    <tr>
+        <th><p>Xem danh sách</p></th>
+        <th><p>Xem chi tiết</p></th>
+        <th><p>Tìm kiếm</p></th>
+    </tr>
+    <tr>
+        <td><img align="center" src="/preview/list.gif" width="auto"/></td>
+        <td><img align="center" src="/preview/detail.gif" width="auto"/></td>
+        <td><img align="center" src="/preview/search.gif" width="auto"/></td>
+    </tr>
+</table>
