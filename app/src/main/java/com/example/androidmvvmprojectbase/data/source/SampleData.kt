@@ -11,7 +11,7 @@ object SampleData {
             name = "Bulbasaur",
             image = "https://img.pokemondb.net/artwork/large/bulbasaur.jpg",
             description = "Bulbasaur is a small, mainly turquoise amphibian Pokémon with red eyes and a green bulb on its back. It is based on a frog/toad, with the bulb resembling a plant bulb that grows into a flower as it evolves.",
-            type = listOf(
+            types = listOf(
                 "Grass",
                 "Poison"
             ),
@@ -31,7 +31,7 @@ object SampleData {
             name = "Squirtle",
             image = "https://img.pokemondb.net/artwork/large/squirtle.jpg",
             description = "Squirtle is a bipedal, reptilian Pokémon. It has a blue body with purple eyes, a light brown belly, and a tough red-brown shell on its back. It has a long tail that curls into a spiral.",
-            type = listOf(
+            types = listOf(
                 "Water"
             ),
             height = 0.5,
@@ -49,8 +49,8 @@ object SampleData {
             id = "10",
             name = "Caterpie",
             image = "https://img.pokemondb.net/artwork/large/caterpie.jpg",
-            description = "Caterpie is a Bug type Pokémon introduced in Generation 1.",
-            type = listOf(
+            description = "Caterpie is a Bug types Pokémon introduced in Generation 1.",
+            types = listOf(
                 "Bug"
             ),
             height = 0.3,
@@ -68,8 +68,8 @@ object SampleData {
             id = "16",
             name = "Pidgey",
             image = "https://img.pokemondb.net/artwork/large/pidgey.jpg",
-            description = "Pidgey is a Normal/Flying type Pokémon introduced in Generation 1.",
-            type = listOf(
+            description = "Pidgey is a Normal/Flying types Pokémon introduced in Generation 1.",
+            types = listOf(
                 "Normal",
                 "Flying"
             ),
@@ -88,8 +88,8 @@ object SampleData {
             id = "25",
             name = "Pikachu",
             image = "https://img.pokemondb.net/artwork/pikachu.jpg",
-            description = "Pikachu is an Electric type Pokémon introduced in Generation 1.",
-            type = listOf(
+            description = "Pikachu is an Electric types Pokémon introduced in Generation 1.",
+            types = listOf(
                 "Electric"
             ),
             height = 0.4,
@@ -107,8 +107,8 @@ object SampleData {
             id = "29",
             name = "Nidoran (female)",
             image = "https://img.pokemondb.net/artwork/nidoran-f.jpg",
-            description = "Nidoran♀ is a Poison type Pokémon introduced in Generation 1.",
-            type = listOf(
+            description = "Nidoran♀ is a Poison types Pokémon introduced in Generation 1.",
+            types = listOf(
                 "Poison"
             ),
             height = 0.4,
@@ -126,8 +126,8 @@ object SampleData {
             id = "151",
             name = "Mew",
             image = "https://img.pokemondb.net/artwork/mew.jpg",
-            description = "Mew is a Psychic type Pokémon introduced in Generation 1.",
-            type = listOf(
+            description = "Mew is a Psychic types Pokémon introduced in Generation 1.",
+            types = listOf(
                 "Psychic"
             ),
             height = 0.4,

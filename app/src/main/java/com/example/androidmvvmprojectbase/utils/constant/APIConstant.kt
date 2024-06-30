@@ -10,6 +10,7 @@ object APIConstant {
     }
 
     object TimeOut {
-        const val CONNECT_TIME_OUT = 20L
+        const val CONNECT_TIME_OUT = 5L
+        const val READ_TIME_OUT = 5L
     }
 }

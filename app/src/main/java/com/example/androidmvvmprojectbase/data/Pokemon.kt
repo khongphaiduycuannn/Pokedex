@@ -7,7 +7,7 @@ data class Pokemon(
     val name: String,
     val image: String?,
     val description: String?,
-    val type: List<String>,
+    val types: List<String>,
     val height: Double,
     val weight: Double,
     val status: Status
@@ -19,7 +19,7 @@ data class Status(
     val defense: Int,
     @SerializedName("sp_atk")
     val spAtk: Int,
-    @SerializedName("sp_def")
+    @SerializedName("sp_defense")
     val spDef: Int,
     val speed: Int
 )

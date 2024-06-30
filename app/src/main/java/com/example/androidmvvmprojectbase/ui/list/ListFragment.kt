@@ -1,6 +1,7 @@
 package com.example.androidmvvmprojectbase.ui.list
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -51,6 +52,12 @@ class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::infl
         viewModel.pokemonList.observe(viewLifecycleOwner) {
             sharedViewModel.pokemonList.value = it
             pokemonAdapter.setDataList(it)
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) {
+            if (!it.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

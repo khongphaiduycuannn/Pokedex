@@ -56,7 +56,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     override fun observeData() {
         viewModel.pokemon.observe(viewLifecycleOwner) {
-            val mainType = it.type[0]
+            val mainType = it.types[0]
             setBackgroundColor(mainType)
             setHeaderTextColor(mainType)
             setPokemonData(it)
@@ -137,7 +137,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private fun setPokemonData(pokemon: Pokemon) {
         with(binding) {
-            typeAdapter.setDataList(pokemon.type.toMutableList())
+            typeAdapter.setDataList(pokemon.types.toMutableList())
 
             while (pokemon.id.length < 3) {
                 pokemon.id = "0" + pokemon.id
