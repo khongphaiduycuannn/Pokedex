@@ -1,11 +1,18 @@
 package com.example.androidmvvmprojectbase.ui.list
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.KeyEvent
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
+import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.androidmvvmprojectbase.MainActivity
 import com.example.androidmvvmprojectbase.R
 import com.example.androidmvvmprojectbase.base.BaseFragment
 import com.example.androidmvvmprojectbase.databinding.FragmentListBinding
@@ -62,6 +69,26 @@ class ListFragment : BaseFragment<FragmentListBinding>(FragmentListBinding::infl
     }
 
     override fun setOnClick() {
+        binding.edtSearchText.setOnEditorActionListener{ _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                (requireActivity() as MainActivity).hideKeyboard()
+            }
+            true
+        }
+        binding.edtSearchText.addTextChangedListener(searchTextWatcher)
+    }
 
+    private val searchTextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+        }
+
+        override fun onTextChanged(searchKey: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            viewModel.searchPokemon(searchKey.toString())
+        }
+
+        override fun afterTextChanged(p0: Editable?) {
+
+        }
     }
 }

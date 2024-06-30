@@ -12,6 +12,8 @@ class ListViewModel : BaseViewModel() {
     private val pokemonRepository =
         PokemonRepository(RetrofitClient.getInstance().create(APIService::class.java))
 
+    private var originalList = mutableListOf<Pokemon>()
+
     val pokemonList = MutableLiveData<MutableList<Pokemon>>()
 
     val error = MutableLiveData<String>(null)
@@ -22,11 +24,19 @@ class ListViewModel : BaseViewModel() {
                 pokemonRepository.getPokemonList()
             },
             onSuccess = {
+                originalList = it.toMutableList()
                 pokemonList.value = it.toMutableList()
             },
             onError = {
                 error.value = it.message
             }
         )
+    }
+
+    fun searchPokemon(searchKey: String) {
+        val searchList = originalList.filter {
+            it.name.contains(searchKey)
+        }
+        pokemonList.value = searchList.toMutableList()
     }
 }

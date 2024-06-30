@@ -10,7 +10,6 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.example.androidmvvmprojectbase.R
-import com.skydoves.transformationlayout.onTransformationStartContainer
 
 abstract class BaseActivity<VB : ViewBinding>(
     private val bindingInflater: (LayoutInflater) -> VB
@@ -51,5 +50,12 @@ abstract class BaseActivity<VB : ViewBinding>(
             }
         }
         return super.dispatchTouchEvent(event)
+    }
+
+    public fun hideKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        currentFocus?.let {
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
+        }
     }
 }
